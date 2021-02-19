@@ -5,6 +5,8 @@
  */
 package examen1_carlosbarahona;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Admin
@@ -33,6 +35,9 @@ public class Registrar extends javax.swing.JFrame {
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jFormattedTextField2 = new javax.swing.JFormattedTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,6 +62,13 @@ public class Registrar extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        jLabel4.setText("Estado de usuario");
+
+        jRadioButton1.setText("Normal");
+
+        jRadioButton2.setText("Admin");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,13 +82,18 @@ public class Registrar extends javax.swing.JFrame {
                         .addGap(155, 155, 155)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel3))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jFormattedTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
-                                .addComponent(jFormattedTextField2)))))
+                                .addComponent(jFormattedTextField2)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(24, 24, 24)
+                                    .addComponent(jButton1)))
+                            .addComponent(jRadioButton1)
+                            .addComponent(jRadioButton2))))
                 .addContainerGap(331, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -92,9 +109,15 @@ public class Registrar extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jRadioButton1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton2)
+                .addGap(60, 60, 60)
                 .addComponent(jButton1)
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
         );
 
         pack();
@@ -105,13 +128,19 @@ public class Registrar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-            String usuario;
-            String contraseña;
-            try {
-                usuario = jFormattedTextField1.getText();
-                contraseña = jFormattedTextField2.getText();
-            
-            }
+        String usuario;
+        String contraseña;
+        String estado;
+
+        usuario = jFormattedTextField1.getText();
+        contraseña = jFormattedTextField2.getText();
+        if (jRadioButton1.isSelected()) {
+            estado = "Normal";
+        } else {
+            estado = "Admin";
+        }
+        Usuarios x = new Usuarios(
+                    usuario, contraseña, estado);
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -149,6 +178,8 @@ public class Registrar extends javax.swing.JFrame {
             }
         });
     }
+    
+    ArrayList<Usuarios> usuario = new ArrayList();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -157,5 +188,8 @@ public class Registrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     // End of variables declaration//GEN-END:variables
 }

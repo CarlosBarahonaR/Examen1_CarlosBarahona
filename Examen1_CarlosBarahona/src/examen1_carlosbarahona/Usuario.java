@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author Admin
  */
 public class Usuario {
+
     public int codigo;
     public String nombre;
     public String apellido;
@@ -27,9 +28,9 @@ public class Usuario {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
-        this.actualmente=actualmente;
-        this.prestados=prestados;
-        
+        this.actualmente = actualmente;
+        this.prestados = prestados;
+
     }
 
     public int getCodigo() {
@@ -84,10 +85,5 @@ public class Usuario {
     public String toString() {
         return nombre;
     }
-    
-    
-    
-    
-    
-            
+
 }

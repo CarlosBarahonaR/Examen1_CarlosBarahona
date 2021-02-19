@@ -12,13 +12,14 @@ import java.util.ArrayList;
  * @author Admin
  */
 public class Registrados extends Usuarios {
+
     public ArrayList<Usuarios> usuarios = new ArrayList();
 
     public Registrados() {
     }
 
-    public Registrados(ArrayList<Usuarios> usuarios, String nombre, String contraseña) {
-        super(nombre, contraseña);
+    public Registrados(ArrayList<Usuarios> usuarios, String nombre, String contraseña, String admin) {
+        super(nombre, contraseña, admin);
     }
 
     public ArrayList<Usuarios> getUsuarios() {
@@ -33,9 +34,5 @@ public class Registrados extends Usuarios {
     public String toString() {
         return "Registrados{" + "usuarios=" + usuarios + '}';
     }
-    
 
-    
-    
-    
 }

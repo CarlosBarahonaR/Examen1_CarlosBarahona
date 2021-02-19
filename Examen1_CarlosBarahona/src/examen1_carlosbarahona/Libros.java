@@ -12,14 +12,15 @@ import java.util.Date;
  * @author Admin
  */
 public class Libros {
+
     public String autores;
     public String titulo;
     public String genero;
     public String editoriales;
     public String idioma;
-    public Date año;
+    public int año;
     public int ISBN;
-    public Date añoLib;
+    public int añoLib;
     public String estado;
     public String pprestado;
     public int ncuenta;
@@ -27,7 +28,7 @@ public class Libros {
     public Libros() {
     }
 
-    public Libros(String autores, String titulo, String genero, String editoriales, String idioma, Date año, int ISBN, Date añoLib, String estado, String pprestado, int ncuenta) {
+    public Libros(String autores, String titulo, String genero, String editoriales, String idioma, int año, int ISBN, int añoLib, String estado, String pprestado, int ncuenta) {
         this.autores = autores;
         this.titulo = titulo;
         this.genero = genero;
@@ -81,11 +82,11 @@ public class Libros {
         this.idioma = idioma;
     }
 
-    public Date getAño() {
+    public int getAño() {
         return año;
     }
 
-    public void setAño(Date año) {
+    public void setAño(int año) {
         this.año = año;
     }
 
@@ -97,11 +98,11 @@ public class Libros {
         this.ISBN = ISBN;
     }
 
-    public Date getAñoLib() {
+    public int getAñoLib() {
         return añoLib;
     }
 
-    public void setAñoLib(Date añoLib) {
+    public void setAñoLib(int añoLib) {
         this.añoLib = añoLib;
     }
 
@@ -133,5 +134,5 @@ public class Libros {
     public String toString() {
         return titulo;
     }
-    
+
 }

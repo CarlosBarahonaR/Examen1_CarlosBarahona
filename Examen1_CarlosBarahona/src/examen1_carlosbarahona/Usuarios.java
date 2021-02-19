@@ -13,13 +13,15 @@ public class Usuarios {
 
     public String nombre;
     public String contraseña;
+    public String admin;
 
     public Usuarios() {
     }
 
-    public Usuarios(String nombre, String contraseña) {
+    public Usuarios(String nombre, String contraseña, String admin) {
         this.nombre = nombre;
         this.contraseña = contraseña;
+        this.admin=admin;
     }
 
     public String getNombre() {
@@ -37,6 +39,15 @@ public class Usuarios {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
+
+    public String getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(String admin) {
+        this.admin = admin;
+    }
+    
 
     @Override
     public String toString() {

@@ -10,6 +10,7 @@ package examen1_carlosbarahona;
  * @author Admin
  */
 public class Estado {
+
     public String estado;
 
     public Estado() {
@@ -31,7 +32,5 @@ public class Estado {
     public String toString() {
         return estado;
     }
-    
-    
-    
+
 }
